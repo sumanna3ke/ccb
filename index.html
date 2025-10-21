@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram Reel Downloader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+    }
+    .thumbnail {
+      width: 100%;
+      max-height: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Instagram Reel Downloader</h1>
+    <input type="text" id="urlInput" placeholder="Paste Instagram Reel URL here" />
+    <button onclick="downloadReel()">Fetch</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    async function downloadReel() {
+      const url = document.getElementById('urlInput').value.trim();
+      if (!url) {
+        alert('Please enter a valid Instagram Reel URL');
+        return;
+      }
+
+      const api = `https://universaldownloaderapi.vercel.app/api/meta/download?url=${encodeURIComponent(url)}`;
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '<p>Loading...</p>';
+
+      try {
+        const res = await fetch(api);
+        const data = await res.json();
+
+        if (data && data.result && data.result.length > 0) {
+          const media = data.result[0];
+          const thumb = media.thumbnail || media.thumb || '';
+          const link = media.url || media.download_url || '';
+
+          resultDiv.innerHTML = `
+            ${thumb ? `<img src="${thumb}" class="thumbnail" alt="Thumbnail" />` : ''}
+            <a href="${link}" target="_blank" download>
+              <button>Download Video</button>
+            </a>
+          `;
+        } else {
+          resultDiv.innerHTML = '<p>No video found. Try another URL.</p>';
+        }
+      } catch (error) {
+        console.error(error);
+        resultDiv.innerHTML = '<p>Error fetching data. Please try again.</p>';
+      }
+    }
+  </script>
+</body>
+</html>
