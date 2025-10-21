@@ -1,163 +1,249 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Pingoz Downloader</title>
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#3b82f6}
-    *{box-sizing:border-box}
-    body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial; margin:0; min-height:100vh; background:linear-gradient(180deg,#071127 0%, #071a2b 100%); color:#e6eef6; display:flex; align-items:center; justify-content:center; padding:28px}
-    .container{width:100%; max-width:920px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:20px; box-shadow:0 8px 30px rgba(2,6,23,0.6)}
-    h1{margin:0 0 8px; font-size:22px}
-    p.lead{margin:0 0 18px; color:var(--muted)}
-    .row{display:flex; gap:10px}
-    input[type=text]{flex:1; padding:12px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit}
-    button{padding:12px 16px; border-radius:8px; border:0; background:var(--accent); color:#fff; cursor:pointer}
-    .results{margin-top:18px}
-    .card{background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; margin-bottom:12px; display:flex; gap:12px; align-items:center}
-    .thumb{width:160px; height:90px; object-fit:cover; border-radius:8px; background:#071026}
-    .meta{flex:1}
-    .meta b{display:block}
-    .btns{display:flex; gap:8px; margin-top:8px}
-    .btn-download{padding:8px 10px; border-radius:8px; background:#0ea5a9; border:0; color:#022; cursor:pointer}
-    .muted{color:var(--muted); font-size:13px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instagram Reels Downloader Online - Pingoz</title>
+<meta name="description" content="Download Instagram Reels videos online in HD quality for free. Works on Android, iPhone, and desktop. Fast, safe, and secure Instagram downloader.">
+<meta name="keywords" content="Instagram Reels Downloader, Instagram video downloader, download Instagram Reels, download Instagram videos, Reels video download">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yourwebsite.com/">
+<style>
+:root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#3b82f6}
+*{box-sizing:border-box}
+body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial; margin:0; min-height:100vh; background:linear-gradient(180deg,#071127 0%, #071a2b 100%); color:#e6eef6; display:flex; flex-direction:column; align-items:center; padding:20px}
+header, footer{width:100%; max-width:920px; background:var(--card); border-radius:10px; padding:15px 20px; box-shadow:0 5px 20px rgba(2,6,23,0.5); margin-bottom:20px}
+header h1{margin:0; font-size:28px}
+nav a{margin-right:15px; color:#fff; text-decoration:none; font-weight:500}
+.container{width:100%; max-width:920px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:20px; box-shadow:0 8px 30px rgba(2,6,23,0.6); margin-bottom:20px}
+h1,h2,h3{margin:0 0 10px}
+h1{font-size:28px}
+h2{font-size:22px; margin-top:20px}
+h3{font-size:18px; margin-top:15px}
+p.lead,p{text-align:left; margin-bottom:15px; color:var(--muted)}
+ul,ol{margin-left:20px; margin-bottom:15px}
+.row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:15px}
+input[type=text]{flex:1; padding:12px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit; min-width:200px}
+button{padding:12px 16px; border-radius:8px; border:0; background:var(--accent); color:#fff; cursor:pointer}
+.results{margin-top:18px}
+.card{background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; margin-bottom:12px; display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+.thumb{width:160px; height:90px; object-fit:cover; border-radius:8px; background:#071026}
+.meta{flex:1; min-width:200px}
+.meta b{display:block}
+.btns{display:flex; gap:8px; margin-top:8px; flex-wrap:wrap}
+.btn-download{padding:8px 10px; border-radius:8px; background:#0ea5a9; border:0; color:#022; cursor:pointer}
+.muted{color:var(--muted); font-size:13px}
+footer p{margin:5px 0; font-size:14px; color:var(--muted)}
+.faq{margin-top:20px}
+.faq h3{cursor:pointer; margin-bottom:5px}
+.faq p{display:none; margin-left:10px; color:var(--muted)}
+.faq.active p{display:block;}
+.logo-container{text-align:center; margin-bottom:20px;}
+.logo-container img{max-width:200px; height:auto;}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1> Pingoz Instagram Downloader</h1>
-    <p class="lead">Paste an Instagram reel</p>
 
-    <div class="row">
-      <input id="urlInput" type="text" placeholder="https://www.instagram.com/reel/..." value="https://www.instagram.com/reel/DP-nMHxkVzh/?igsh=MzRlODBiNWFlZA==">
-      <button id="fetchBtn">Download</button>
-    </div>
+<header>
+  <h1>Pingoz Instagram Downloader</h1>
+  <nav>
+    <a href="#download">Download</a>
+    <a href="#faq">FAQ</a>
+    <a href="#about">About</a>
+    <a href="#privacy">Privacy Policy</a>
+  </nav>
+</header>
 
-    <div class="results" id="results" aria-live="polite"></div>
+<!-- Logo inserted here -->
+<div class="logo-container">
+  <a href="https://imgbb.com/">
+    <img src="https://i.ibb.co/842NdmGp/ilogo.png" alt="ilogo" border="0">
+  </a>
+</div>
+
+<div class="container" id="download">
+  <h2>Download Instagram Reels Online</h2>
+  <p class="lead">Downloading Instagram Reels has never been easier or safer. Save Reels videos in HD MP4 quality directly to your device. Free, works on Android, iPhone, and desktop.</p>
+
+  <h3>How to Download Instagram Reels?</h3>
+  <ol>
+    <li><b>Copy the URL:</b> Open Instagram, find the photo, video, reel, carousel, or IGTV you want, and copy the URL.</li>
+    <li><b>Paste the link:</b> Return here, paste the URL in the input field, and click "Download".</li>
+    <li><b>Download Video Reel:</b> Review the results, click "Download" on the file you want. Done!</li>
+  </ol>
+
+  <h3>Fast and Secure Reels Download</h3>
+  <p>Download your Instagram Reels 100% safely without login or personal info, in just three simple steps. No spam or ads.</p>
+
+  <h3>Download with Mobile App (Android)</h3>
+  <p>Download photos, videos, reels, and IGTV in one click. Fast, high-resolution downloads without watermarks.</p>
+  <button>Install Now</button>
+
+  <div class="row" aria-label="Instagram URL input section">
+    <input id="urlInput" type="text" placeholder="Paste Instagram reel link here...">
+    <button id="fetchBtn">Download</button>
   </div>
+  <div class="results" id="results" aria-live="polite"></div>
+</div>
 
-  <script>
-    const apiBase = 'https://universaldownloaderapi.vercel.app/api/meta/download?url=';
-    const input = document.getElementById('urlInput');
-    const btn = document.getElementById('fetchBtn');
-    const results = document.getElementById('results');
+<div class="container faq" id="faq">
+  <h2>FAQ</h2>
+  <div class="faq-item">
+    <h3>Is it legal to download Instagram Reels Video using this tool?</h3>
+    <p>Yes, you can download videos for personal use. Do not redistribute copyrighted content without permission.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do I need an Instagram account?</h3>
+    <p>No login is required to use this tool.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Can I download Reels in different resolutions or formats?</h3>
+    <p>Currently, the downloader provides HD MP4 format.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Any limitations on the number of downloads?</h3>
+    <p>No, download as many Reels as you want.</p>
+  </div>
+</div>
 
-    btn.addEventListener('click', async () => {
-      const url = input.value.trim();
-      results.innerHTML = '';
-      if (!url) { results.textContent = 'Please enter a URL.'; return; }
+<footer>
+  <p>Video Downloader | Photo Downloader | Reels Downloader | Story Downloader | Highlights Downloader</p>
+  <p>How to download Instagram Photos & Videos | About | Privacy Policy | Background Remover | Pinterest Video Downloader</p>
+  <p>&copy; 2025 Pingoz. All rights reserved.</p>
+</footer>
 
-      try {
-        const resp = await fetch(apiBase + encodeURIComponent(url));
-        if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        const data = await resp.json();
-        renderFromApi(data);
-      } catch (err) {
-        console.error(err);
-        const e = document.createElement('div'); e.className='card'; e.textContent = 'Error fetching API: ' + err.message; results.appendChild(e);
-      }
-    });
+<script>
+// Downloader JS
+const apiBase = 'https://universaldownloaderapi.vercel.app/api/meta/download?url=';
+const input = document.getElementById('urlInput');
+const btn = document.getElementById('fetchBtn');
+const results = document.getElementById('results');
 
-    function renderFromApi(data){
-      results.innerHTML = '';
-      const candidates = [];
-      function pushIfArray(x){ if (Array.isArray(x)) candidates.push(...x); }
-      if (!data) return;
-      if (data.media) pushIfArray(data.media);
-      if (data.videos) pushIfArray(data.videos);
-      if (data.images) pushIfArray(data.images);
-      if (data.items) pushIfArray(data.items);
-      if (data.posts) pushIfArray(data.posts);
-      if (data.data) pushIfArray(data.data);
-      if (candidates.length === 0) {
-        const single = findMediaObjectIn(data);
-        if (single) candidates.push(single);
-      }
-      if (candidates.length === 0) {
-        const found = findAllMediaUrls(data);
-        if (found.length) candidates.push(...found);
-      }
-      if (candidates.length === 0) {
-        const e = document.createElement('div'); e.className='card'; e.textContent = 'No media items found in API response.'; results.appendChild(e);
-        return;
-      }
-      candidates.forEach((item, idx) => {
-        const url = item.url || item.src || item.download || item.play || item.direct || item.href || item.video || item.image || item.file || null;
-        const thumbUrl = item.thumbnail || item.thumb || item.preview || item.image || item.cover || null;
-        const type = (item.type || item.mime || guessTypeFromUrl(url) || 'unknown');
-        const card = document.createElement('div'); card.className='card';
-        const thumb = document.createElement('img');
-        thumb.className='thumb';
-        thumb.src = thumbUrl || url || '';
-        thumb.alt = 'thumbnail';
-        card.appendChild(thumb);
-        const meta = document.createElement('div'); meta.className='meta';
-        const title = document.createElement('b'); title.textContent = item.title || item.caption || ('Media ' + (idx+1));
-        meta.appendChild(title);
-        const info = document.createElement('div'); info.className='muted'; info.textContent = 'Type: ' + String(type);
-        meta.appendChild(info);
-        const btns = document.createElement('div'); btns.className='btns';
-        if (url){
-          const dl = document.createElement('button'); dl.className='btn-download'; dl.textContent = 'Download';
-          dl.addEventListener('click', ()=>downloadByUrl(url, item.filename || ('media-' + (idx+1))));
-          btns.appendChild(dl);
-        }
-        if (url){
-          const open = document.createElement('button'); open.textContent = 'Open'; open.addEventListener('click', ()=>window.open(url,'_blank'));
-          btns.appendChild(open);
-        }
-        meta.appendChild(btns);
-        card.appendChild(meta);
-        results.appendChild(card);
-      });
+btn.addEventListener('click', async () => {
+  const url = input.value.trim();
+  results.innerHTML = '';
+  if (!url) { results.textContent = 'Please enter a valid Instagram URL.'; return; }
+
+  try {
+    const resp = await fetch(apiBase + encodeURIComponent(url));
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    renderFromApi(data);
+  } catch (err) {
+    console.error(err);
+    const e = document.createElement('div'); e.className='card'; e.textContent = 'Error fetching API: ' + err.message; results.appendChild(e);
+  }
+});
+
+function renderFromApi(data){
+  results.innerHTML = '';
+  const candidates = [];
+  function pushIfArray(x){ if (Array.isArray(x)) candidates.push(...x); }
+  if (!data) return;
+  if (data.media) pushIfArray(data.media);
+  if (data.videos) pushIfArray(data.videos);
+  if (data.images) pushIfArray(data.images);
+  if (data.items) pushIfArray(data.items);
+  if (data.posts) pushIfArray(data.posts);
+  if (data.data) pushIfArray(data.data);
+  if (candidates.length === 0) {
+    const single = findMediaObjectIn(data);
+    if (single) candidates.push(single);
+  }
+  if (candidates.length === 0) {
+    const found = findAllMediaUrls(data);
+    if (found.length) candidates.push(...found);
+  }
+  if (candidates.length === 0) {
+    const e = document.createElement('div'); e.className='card'; e.textContent = 'No media items found in API response.'; results.appendChild(e);
+    return;
+  }
+
+  candidates.forEach((item, idx) => {
+    const url = item.url || item.src || item.download || item.play || item.direct || item.href || item.video || item.image || item.file || null;
+    const thumbUrl = item.thumbnail || item.thumb || item.preview || item.image || item.cover || null;
+    const type = (item.type || item.mime || guessTypeFromUrl(url) || 'unknown');
+
+    const card = document.createElement('div'); card.className='card';
+
+    const thumb = document.createElement('img');
+    thumb.className='thumb';
+    thumb.src = thumbUrl || url || '';
+    thumb.loading = 'lazy';
+    thumb.alt = item.title || 'Instagram media';
+    card.appendChild(thumb);
+
+    const meta = document.createElement('div'); meta.className='meta';
+    const title = document.createElement('b'); title.textContent = item.title || item.caption || ('Media ' + (idx+1));
+    meta.appendChild(title);
+    const info = document.createElement('div'); info.className='muted'; info.textContent = 'Type: ' + String(type);
+    meta.appendChild(info);
+
+    const btns = document.createElement('div'); btns.className='btns';
+    if (url){
+      const dl = document.createElement('button'); dl.className='btn-download'; dl.textContent = 'Download';
+      dl.addEventListener('click', ()=>downloadByUrl(url, item.filename || ('media-' + (idx+1))));
+      btns.appendChild(dl);
+
+      const open = document.createElement('button'); open.textContent = 'Open'; open.addEventListener('click', ()=>window.open(url,'_blank'));
+      btns.appendChild(open);
     }
+    meta.appendChild(btns);
+    card.appendChild(meta);
+    results.appendChild(card);
+  });
+}
 
-    function downloadByUrl(url, filename){
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = filename || '';
-      a.target = '_blank';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+function downloadByUrl(url, filename){
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename || '';
+  a.target = '_blank';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+function findMediaObjectIn(obj){
+  if (!obj || typeof obj !== 'object') return null;
+  const keys = ['url','src','download','video','image','play','direct','file','href'];
+  for (const k of keys) if (k in obj) return obj;
+  return null;
+}
+
+function findAllMediaUrls(obj){
+  const out = [];
+  const seen = new WeakSet();
+  (function recurse(o){
+    if (!o || typeof o !== 'object' || seen.has(o)) return;
+    seen.add(o);
+    if (Array.isArray(o)){
+      o.forEach(recurse);
+      return;
     }
-
-    function findMediaObjectIn(obj){
-      if (!obj || typeof obj !== 'object') return null;
-      const keys = ['url','src','download','video','image','play','direct','file','href'];
-      for (const k of keys) if (k in obj) return obj;
-      return null;
+    const keys = Object.keys(o);
+    const urlKey = keys.find(k => /url|src|download|play|media|file|href/i.test(k));
+    if (urlKey && typeof o[urlKey] === 'string'){
+      out.push(o);
     }
+    keys.forEach(k => recurse(o[k]));
+  })(obj);
+  return out;
+}
 
-    function findAllMediaUrls(obj){
-      const out = [];
-      const seen = new WeakSet();
-      (function recurse(o){
-        if (!o || typeof o !== 'object' || seen.has(o)) return;
-        seen.add(o);
-        if (Array.isArray(o)){
-          o.forEach(recurse);
-          return;
-        }
-        const keys = Object.keys(o);
-        const urlKey = keys.find(k => /url|src|download|play|media|file|href/i.test(k));
-        if (urlKey && typeof o[urlKey] === 'string'){
-          out.push(o);
-        }
-        keys.forEach(k => recurse(o[k]));
-      })(obj);
-      return out;
-    }
+function guessTypeFromUrl(url){
+  if (!url) return null;
+  const u = url.split('?')[0].toLowerCase();
+  if (u.endsWith('.mp4') || u.includes('/video/')) return 'video';
+  if (u.endsWith('.jpg')||u.endsWith('.jpeg')||u.endsWith('.png')||u.includes('/image/')) return 'image';
+  return null;
+}
 
-    function guessTypeFromUrl(url){
-      if (!url) return null;
-      const u = url.split('?')[0].toLowerCase();
-      if (u.endsWith('.mp4') || u.includes('/video/')) return 'video';
-      if (u.endsWith('.jpg')||u.endsWith('.jpeg')||u.endsWith('.png')||u.includes('/image/')) return 'image';
-      return null;
-    }
+// FAQ toggle
+document.querySelectorAll('.faq-item h3').forEach(item => {
+  item.addEventListener('click', ()=>{item.parentElement.classList.toggle('active')});
+});
+</script>
 
-  </script>
 </body>
 </html>
